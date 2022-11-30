@@ -27,7 +27,7 @@ phases:
       - docker tag service4:latest $uri4:latest
       - docker build -t service5 -f ./service5/Dockerfile .
       - docker tag service5:latest $uri5:latest
-      - docker build -t service6 -f ./Service6/Dockerfile .
+      - docker build -t service6 -f ./service6/Dockerfile .
       - docker tag service6:latest $uri6:latest
   post_build:
     commands:
