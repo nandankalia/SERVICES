@@ -6,13 +6,13 @@ phases:
   pre_build:
     commands:
       - echo Logging in to Amazon ECR...
-      - aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws/i8g4q7b2
-      - uri1=public.ecr.aws/i8g4q7b2/ecr-1
-      - uri2=public.ecr.aws/i8g4q7b2/ecr-2
-      - uri3=public.ecr.aws/i8g4q7b2/ecr-3
-      - uri4=public.ecr.aws/i8g4q7b2/ecr-4
-      - uri5=public.ecr.aws/i8g4q7b2/ecr-5
-      - uri6=public.ecr.aws/i8g4q7b2/ecr-6
+      - aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws/o1n4v7q2
+      - uri1=public.ecr.aws/o1n4v7q2/ecr-1
+      - uri2=public.ecr.aws/o1n4v7q2/ecr-2
+      - uri3=public.ecr.aws/o1n4v7q2/ecr-3
+      - uri4=public.ecr.aws/o1n4v7q2/ecr-4
+      - uri5=public.ecr.aws/o1n4v7q2/ecr-5
+      - uri6=public.ecr.aws/o1n4v7q2/ecr-6
   build:
     commands:
       - echo Build started on `date`
