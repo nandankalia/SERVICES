@@ -33,8 +33,8 @@ resource "aws_ecs_service" "service1" {
 
 
   network_configuration {
-    subnets          = ["${aws_subnet.pub-a.id}", "${aws_subnet.pub-b.id}"]
-    security_groups  = ["${aws_security_group.sg3.id}"]
+    subnets          = ["${aws_subnet.seasiasubnet1.id}", "${aws_subnet.seasiasubnet2.id}"]
+    security_groups  = ["${aws_security_group.seasiasecuritygroup.id}"]
     assign_public_ip = true
   }
 
@@ -86,7 +86,7 @@ resource "aws_codebuild_project" "my_docker_build" {
 
   source {
     type            = "GITHUB"
-    location        = "https://github.com/Siarajput421/Dockerpipe1.git"
+    location        = var.gitlink
     git_clone_depth = 1
   }
 }
@@ -114,10 +114,10 @@ resource "aws_codepipeline" "my_pipeline" {
       output_artifacts = ["source_output"]
 
       configuration = {
-        Owner      = "Siarajput421"
-        Repo       = "Dockerpipe1"
+        Owner      = "nandankalia"
+        Repo       = "SERVICES"
         Branch     = "main"
-        OAuthToken = "*******"
+        OAuthToken = var.gittoken
       }
     }
   }
